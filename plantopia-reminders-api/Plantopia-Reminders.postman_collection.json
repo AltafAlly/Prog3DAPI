@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Plantopia Reminders API",
+    "_postman_id": "12345678-1234-1234-1234-1234567890ab",
+    "description": "Collection to test Plantopia Water Reminder API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Reminder (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"12345\",\n    \"title\": \"Water Aloe Vera\",\n    \"date\": \"2025-10-05\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/reminders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["reminders"]
+        }
+      }
+    },
+    {
+      "name": "Get Reminders (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/reminders/12345",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["reminders", "12345"]
+        }
+      }
+    },
+    {
+      "name": "Update Reminder (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Water Aloe Vera (Updated)\",\n    \"date\": \"2025-10-06\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/reminders/{{reminderId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["reminders", "{{reminderId}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Reminder (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/reminders/{{reminderId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["reminders", "{{reminderId}}"]
+        }
+      }
+    }
+  ]
+}
